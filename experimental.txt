@@ -1,0 +1,16 @@
+1. thiết kế thí nghiệm
+a) onehot + cnn (đơn giản) (so sánh với 4 mô hình ML (nhớ tool param) đơn giản) KNN SVM RF GB
+b) so sánh giữa các mô hình deeplearning
+c) đánh giá cái performance (chạy nhiều seat rồi so sánh), robustness (chia dữ liệu trên nhiều tập coi nó có ổn định hay không)
+d) Làm phân tích về mặt sinh học, logo analysis
+
+làm ra cái khung thí nghiệm trước rồi thêm đủ thứ vào
+
+learning rate: maxdepth(3 -> 6)
+knn: neighbor: 3 5 7 9 11 15
+xgb: nestimater: 100, learning rate: 0.01 0.05 0.1
+lightgbm: nestimater: 100, learning rate: 0.01 0.05 0.1
+
+1. Viết ra thành các file với các task khác nhau, viết thành các module để dùng đi dùng lại
+2. Nhớ set seed để chạy 100 lần cũng ra đúng một kết quả
+
