@@ -6,6 +6,7 @@ from sklearn.naive_bayes import GaussianNB
 import xgboost as xgb
 from lightgbm import LGBMClassifier
 import pandas as pd
+from utils import scoring, evaluate
 
 # Define the models
 models = {
@@ -27,7 +28,7 @@ param_grids = {
     'LightGBM': {'n_estimators': [100], 'learning_rate': [0.01, 0.05, 0.1], 'max_depth': [3, 4, 5, 6]}
 }
 
-def train_and_validate(models, train_data, train_labels, param_grids, skf):
+def train_and_validate(models, train_data, train_labels, param_grids, skf, scoring):
     """
     Trains machine learning models using a training dataset, performs hyperparameter tuning 
     using GridSearchCV with cross-validation, and evaluates performance on a validation set.
@@ -129,30 +130,18 @@ def train_and_test(models, train_data, train_labels, test_data, test_labels, par
         # Store cross-validation results
         crossval_results.append([
             model_name,
-            best_results['mean_test_accuracy'][best_index],
-            best_results['mean_test_roc_auc'][best_index],
-            best_results['mean_test_aucpr'][best_index],
-            best_results['mean_test_sensitivity'][best_index],
-            best_results['mean_test_specificity'][best_index],
-            best_results['mean_test_balanced_accuracy'][best_index],
-            best_results['mean_test_f1_macro'][best_index],
-            best_results['mean_test_mcc'][best_index],
+            round(best_results['mean_test_accuracy'][best_index],4),
+            round(best_results['mean_test_roc_auc'][best_index],4),
+            round(best_results['mean_test_aucpr'][best_index],4),
+            round(best_results['mean_test_sensitivity'][best_index],4),
+            round(best_results['mean_test_specificity'][best_index],4),
+            round(best_results['mean_test_balanced_accuracy'][best_index],4),
+            round(best_results['mean_test_f1_macro'][best_index],4),
+            round(best_results['mean_test_mcc'][best_index],4),
         ])
 
         # Evaluate on the test set
-        y_pred = best_model.predict(test_data)
         y_pred_prob = best_model.predict_proba(test_data)[:, 1]
         external_results.append([model_name] + list(evaluate(test_labels, y_pred_prob).values()))
-
-    # Save results
-    pd.DataFrame(crossval_results, columns=[
-        "Model", "Accuracy", "ROC AUC", "AUC-PR", "Sensitivity",
-        "Specificity", "Balanced Accuracy", "F1 Score", "MCC"
-    ]).to_csv("cv_results_ML_DNABERT.csv", index=False)
-
-    pd.DataFrame(external_results, columns=[
-        "Model", "Accuracy", "ROC AUC", "AUC-PR", "Sensitivity",
-        "Specificity", "Balanced Accuracy", "F1 Score", "MCC"
-    ]).to_csv("test_results_ML_DNABERT.csv", index=False)
-
-    print("\nTest results saved successfully!")
+        
+    return crossval_results, external_results

@@ -1,0 +1,5 @@
+thí nghiệm 2:
+Chạy riêng lẻ k = 1, k = 2, k = 3 ....
+kết hợp từng bộ kmer (bộ 2, bộ 3,.. bộ 5)
+
+thí nghiệm 3:

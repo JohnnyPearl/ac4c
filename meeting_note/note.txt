@@ -1,0 +1,5 @@
+Ngày 25/3/2025
+
+1. Thêm 2 feature (bỏ W2V)
+2. Tìm thêm 3 loại attention
+3. Huấn luyện 

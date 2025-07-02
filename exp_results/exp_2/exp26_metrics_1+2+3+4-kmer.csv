@@ -1,0 +1,3 @@
+Metric Type,Epoch,Loss,accuracy,auroc,specificity,sensitivity,precision,f1,balanced_accuracy,mcc
+Validation,60,0.4467,0.7914,0.8679,0.7392,0.8435,0.7639,0.8017,0.7914,0.586
+Test,60,0.4298,0.8053,0.8828,0.7754,0.8351,0.788,0.8109,0.8053,0.6116

@@ -1,0 +1,19 @@
+Experiment,Feature Type,Model Name,Validation AUROC,Test AUROC
+exp01,dnabert,CNN,0.86,0.8722
+exp13,dnabert,CNN + additiveAttention,0.8538,0.8705
+exp07,dnabert,CNN + scaledDotAttention,0.8577,0.8725
+exp02,enac,CNN,0.8423,0.8635
+exp14,enac,CNN + additiveAttention,0.831,0.8421
+exp08,enac,CNN + scaledDotAttention,0.8314,0.8648
+exp03,kmer,CNN,0.8695,0.8814
+exp15,kmer,CNN + additiveAttention,0.8511,0.856
+exp09,kmer,CNN + scaledDotAttention,0.8608,0.8701
+exp04,ncp,CNN,0.816,0.8374
+exp16,ncp,CNN + additiveAttention,0.7954,0.8244
+exp10,ncp,CNN + scaledDotAttention,0.8266,0.8513
+exp05,onehot,CNN,0.8194,0.8415
+exp17,onehot,CNN + additiveAttention,0.7695,0.8011
+exp11,onehot,CNN + scaledDotAttention,0.8148,0.8393
+exp06,ps2,CNN,0.8148,0.8329
+exp18,ps2,CNN + additiveAttention,0.7028,0.7038
+exp12,ps2,CNN + scaledDotAttention,0.8174,0.8357

@@ -1,0 +1,2 @@
+1. So sánh với ML (XGB, RF, SVM, KNN, ERT, lightGMB)
+2. So sánh với DL (Tìm chủ đề và mô hình tương tự, reimplement lại hoặc lấy source code có sẵn trên github để train lại trên feature của mình và so sánh trên tập test) (phương pháp này gọi là compare with SOTA)

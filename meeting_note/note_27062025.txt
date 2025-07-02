@@ -1,0 +1,4 @@
+1. Nâng cấp kiến trúc mô hình CNN hiện tại
+Sau khi nâng cấp thì chỉ cần so sánh cùng feature với CNN cũ (dùng tập val)
+2. So sánh với các mô hình ML (nhớ dùng tập test)
+3. So sánh với các DL (tập test)
